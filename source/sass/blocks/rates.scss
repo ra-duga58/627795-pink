@@ -1,0 +1,29 @@
+.rates {
+  background-color: $gray;
+  border: 4px green solid;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 30px;
+  font-style: bold;
+  color: #000000;
+  padding: 0 0 45px;
+}
+
+.rates__table {
+  background-color: #ffffff;
+}
+
+.rates__table-header {
+  background-color: #283645;
+  color: #ffffff;
+}
+
+.rates__item {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 30px;
+  font-style: normal;
+  color: #000000;
+  border: 1px solid $gray;
+  border-collapse: collapse;
+}
