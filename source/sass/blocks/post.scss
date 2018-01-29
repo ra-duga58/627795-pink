@@ -1,0 +1,53 @@
+.post {
+  background-color: $gray;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 30px;
+  font-style: normal;
+  color: #000000;
+  margin: 0 20px 20px;
+  padding: 28px 21px;
+}
+
+.post__author {
+  font-weight: 700;
+  font-style: bold;
+}
+
+.post__time {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+  font-style: normal;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.post__stats {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+  font-style: normal;
+  color: #D22856;
+  text-transform: uppercase;
+}
+
+.post__btn {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+  font-style: normal;
+  color: #D22856;
+}
+
+.post__rubric {
+  background-color: #D22856;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 24px;
+  font-style: bold;
+}
+.rubric__text {
+  color: #ffffff;
+  text-transform: uppercase;
+}
