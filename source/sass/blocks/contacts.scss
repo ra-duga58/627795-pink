@@ -1,31 +1,79 @@
-.contacts {
-  border: 4px green solid;
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 30px;
-  font-style: light;
-  color: #000000;
-}
-.contacts__inner {
-  padding: 49px 33px;
-}
-.contacts__text {
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 30px;
-  font-style: bold;
-  color: #000000;
-}
-.contacts__details {
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 30px;
-  font-style: light;
-  color: #D22856;
-}
-.contacts__map {
-background-image: url('../img/bg-map-mobile@1x.png');
-background-repeat: no-repeat;
-min-height: 299px;
-padding: 0;
-}
+      .contacts {
+        width: 320px;
+        margin: 0 auto;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 30px;
+        font-style: light;
+        color: #000000;
+      }
+
+      .contacts__container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .contacts__items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contacts__inner-text {
+        text-align: center;
+      }
+
+      .contacts__text {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 30px;
+        font-style: bold;
+        color: #000000;
+      }
+
+      .contacts__details {
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 30px;
+        font-style: light;
+        color: #D22856;
+      }
+
+      .contacts__map {
+        background-image: url('../img/bg-map-mobile@1x.png');
+        background-repeat: repeat;
+        min-height: 299px;
+        padding: 0;
+      }
+
+      @media (min-width: $tablet-width) {
+        .contacts {
+          width: 620px;
+        }
+        .contacts__items {
+          flex-direction: column;
+          flex-wrap: wrap;
+          width: 280px;
+        }
+
+        .contacts__items--address {
+          width: 620px;
+        }
+      }
+
+      @media (min-width: $desktop-width) {
+        .contacts {
+          width: 960px;
+        }
+        .contacts__container {
+          justify-content: space-between;
+        }
+        .contacts__items {
+          flex-direction: row;
+          width: 280px;
+        }
+        .contacts__items--mail {
+          order: 1;
+        }
+      }

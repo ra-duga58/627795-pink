@@ -1,93 +1,189 @@
-.form {
-  border: 4px solid green;
-}
+  .form {
+    margin: 0 auto;
+  }
 
-.fieldset__inner--primary {
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 30px;
-  font-style: normal;
-  color: #000000;
-}
+  .form__container {
+    display: flex;
+    flex-direction: column;
 
-.fieldset__label {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 30px;
-  font-style: normal;
-  color: #D22856;
-}
+  }
 
-.fieldset__checkbox {
-  background-color: $gray;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 30px;
-  font-style: normal;
-  color: #000000;
-}
+  .form__inner--primary {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    font-style: normal;
+    color: #000000;
+  }
 
-.fieldset__title {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-  font-style: normal;
-  color: #D22856;
-  text-transform: uppercase;
-}
+  .form__fields {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+  }
 
-.fieldset__radio {
-  background-color: $gray;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 30px;
-  font-style: normal;
-  color: #000000;
-}
+  .form__field {
+    margin-bottom: 78px;
+  }
 
-.fieldset__textarea {
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 30px;
-  font-style: normal;
-  color: #000000;
-}
+  .form__input {
+    flex-grow: 1;
+    box-sizing: border-box;
+  }
 
-.fieldset__contacts {
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 30px;
-  font-style: normal;
-  color: #000000;
-}
+  .form__label {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 30px;
+    font-style: normal;
+    color: #D22856;
+  }
 
-.fieldset__fullname {
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 30px;
-  font-style: normal;
-  color: #000000;
-}
+  .form__checkbox {
+    background-color: $gray;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    font-style: normal;
+    color: #000000;
+    width: 320px;
+  }
 
-.btn {
-  background-color: #2AAB6D;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 30px;
-  font-style: bold;
-  color: #ffffff;
-  text-transform: uppercase;
-  margin: 20px 0;
-}
+  .form__title {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    font-style: normal;
+    color: #D22856;
+    text-transform: uppercase;
+  }
 
-.form__mark-description {
-  text-transform: uppercase;
-}
+  .form__radio {
+    background-color: $gray;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    font-style: normal;
+    color: #000000;
+  }
 
-.fieldset__input {
-  padding: 19px 20px;
-}
+  .form__textarea {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    font-style: normal;
+    color: #000000;
+  }
 
-.fieldset--position {
-  padding: 42px 20px;
-}
+  .form__contacts {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    font-style: normal;
+    color: #000000;
+  }
+
+
+  .form__fullname {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    font-style: normal;
+    color: #000000;
+    width: 320px;
+  }
+
+  .btn {
+    background-color: #2AAB6D;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+    font-style: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 20px 0;
+  }
+
+  .form__mark-description {
+    text-transform: uppercase;
+  }
+
+  .form__input {
+
+  }
+
+
+  .form__textarea {
+    width: 320px;
+  }
+  .form__footer {
+  display: flex;
+  justify-content: space-between;
+
+  }
+
+  @media (min-width: $tablet-width) {
+    .form__fullname {
+      width: 620px;
+      flex-direction: row;
+    }
+    .form__fields {
+      width: 620px;
+    }
+    .form__checkbox {
+      width: 620px;
+    }
+    .form__contacts {
+      width: 620px;
+    }
+    .form__textarea {
+      width: 620px;
+    }
+    .form__radio {
+      width: 620px;
+    }
+    .form__footer {
+      order: 4;
+      flex-direction: row;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+
+    .form__fullname {
+      width: 470px;
+    }
+    .form__fields {
+      width: 470px;
+    }
+    .form__fields--contacts {
+      flex-direction: row;
+      width: 960px;
+    }
+    .form__field--contact {
+      margin-right: 36px;
+    }
+    .form__contacts {
+      width: 960px;
+      order: 1;
+    }
+    .form__checkbox {
+      width: 960px;
+      order: 2;
+    }
+    .form__container {
+    width: 960px;
+    }
+    .form__radio {
+      width: 470px;
+      flex-shrink: 0;
+    }
+    .form__textarea {
+      width: 960px;
+      order: 3;
+    }
+    .form__footer {
+      order: 4;
+      flex-direction: row;
+    }
+  }

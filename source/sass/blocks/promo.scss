@@ -1,7 +1,10 @@
 .promo {
+  display: flex;
+  flex-direction: column;
   background-image: url('../img/bg-back-mobile@1x.jpg');
-  background-repeat: no-repeat;
-  min-height: 462px;
+  min-height: 480px;
+  width: 320px;
+  margin: 0 auto;
 }
 
 .promo__heading {
@@ -10,4 +13,31 @@
   line-height: 30px;
   font-style: light;
   color: #ffffff;
+}
+
+.promo__img {
+  width: 300px;
+  min-height: 290px;
+}
+
+@media (min-width: $tablet-width) {
+  .promo {
+    width: 620px;
+  }
+  .promo__img {
+    order: 1;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .promo {
+    width: 960px;
+    flex-direction: row;
+  }
+}
+
+.promo__img {
+  order: 1;
+  position: absolute;
+  margin-left: 300px;
 }

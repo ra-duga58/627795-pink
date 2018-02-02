@@ -1,12 +1,13 @@
 .features {
-  background-color: rgb(255, 255, 255);
-  border: 4px green solid;
+  background-color: #ffffff;
   font-size: 24px;
   font-weight: 300;
   line-height: 32px;
   font-style: light;
   color: #000000;
   padding: 43px 30px;
+  margin: 0 auto;
+  width: 320px;
 }
 
 .features__name {
@@ -23,4 +24,49 @@
   line-height: 30px;
   font-style: normal;
   color: #000000;
+}
+
+.features__items {
+  display: flex;
+  flex-derection: column;
+  flex-wrap: wrap;
+}
+.features__item {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+}
+.features__item-content {
+}
+.features__img {
+  display: none;
+  width: 186px;
+}
+
+.features__img--visible {
+  display: block;
+  max-width: 186px;
+  order: 10;
+}
+
+@media (min-width: $tablet-width) {
+  .features {
+  width: 620px;
+  }
+  .features__img--visible {
+  display: none;
+  }
+}
+
+@media (min-width: $desktop-width) {
+ .features {
+  width: 960px;
+  }
+  .features__img {
+    display: block;
+  }
+  .features__items {
+  flex-derection: column;
+  justify-content: space-around;
+  }
 }

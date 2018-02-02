@@ -1,18 +1,21 @@
 .reviews {
   background-color: rgb(255, 255, 255);
-  border: 4px green solid;
   font-size: 14px;
   font-weight: 400;
   line-height: 30px;
   font-style: normal;
   color: #000000;
-  padding: 48px 25px;
 }
-
+.reviews__wrapper {
+  margin: 0 auto;
+}
 .reviews__author-name {
   font-size: 18px;
   font-weight: 700;
   line-height: 30px;
   font-style: bold;
   color: #000000;
+}
+.reviews__text {
+  text-align: middle;
 }

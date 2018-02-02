@@ -1,12 +1,27 @@
 .gallery {
   background-color: #FFFFFF;
-  border: 4px green solid;
-  padding: 54px 37px;
+  width: 320px;
+  margin: 0 auto;
 }
+
 .gallery__lead {
   font-size: 14px;
   font-weight: 400;
   line-height: 30px;
   font-style: normal;
   color: #000000;
+  text-align: center;
+}
+
+@media (min-width: $tablet-width) {
+
+  .gallery {
+    width: 660px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .gallery {
+    width: 960px;
+  }
 }
