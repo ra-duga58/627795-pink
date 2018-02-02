@@ -5,7 +5,6 @@
   .form__container {
     display: flex;
     flex-direction: column;
-
   }
 
   .form__inner--primary {
@@ -108,18 +107,16 @@
     text-transform: uppercase;
   }
 
-  .form__input {
-
-  }
+  .form__input {}
 
 
   .form__textarea {
     width: 320px;
   }
-  .form__footer {
-  display: flex;
-  justify-content: space-between;
 
+  .form__footer {
+    display: flex;
+    justify-content: space-between;
   }
 
   @media (min-width: $tablet-width) {
@@ -172,7 +169,7 @@
       order: 2;
     }
     .form__container {
-    width: 960px;
+      width: 960px;
     }
     .form__radio {
       width: 470px;
