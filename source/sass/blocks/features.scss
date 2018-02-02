@@ -31,13 +31,15 @@
   flex-derection: column;
   flex-wrap: wrap;
 }
+
 .features__item {
   width: 280px;
   display: flex;
   flex-direction: column;
 }
-.features__item-content {
-}
+
+.features__item-content {}
+
 .features__img {
   display: none;
   width: 186px;
@@ -51,22 +53,22 @@
 
 @media (min-width: $tablet-width) {
   .features {
-  width: 620px;
+    width: 620px;
   }
   .features__img--visible {
-  display: none;
+    display: none;
   }
 }
 
 @media (min-width: $desktop-width) {
- .features {
-  width: 960px;
+  .features {
+    width: 960px;
   }
   .features__img {
     display: block;
   }
   .features__items {
-  flex-derection: column;
-  justify-content: space-around;
+    flex-derection: column;
+    justify-content: space-around;
   }
 }
