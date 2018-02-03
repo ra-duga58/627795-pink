@@ -1,16 +1,50 @@
 .downloads {
-  border: 4px green solid;
+  display: flex;
+  flex-direction: column;
+  background-color: #1D2631;
   font-size: 18px;
   font-weight: 700;
   line-height: 18px;
   font-style: bold;
   color: #FFFFFF;
-  padding: 26px 18px;
+  width: 320px;
 }
+
 .downloads__description {
   font-size: 14px;
   font-weight: 300;
   line-height: 24px;
   font-style: light;
   color: #FFFFFF;
+  width: 280px;
+}
+
+.downloads__inner {
+  width: 300px;
+}
+
+.downloads__link {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.downloads__btn {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+
+
+@media (min-width: $tablet-width) {
+  .downloads {
+    flex-direction: row;
+    background-color: transparent;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .downloads {
+    flex-direction: row;
+    background-color: transparent;
+  }
 }

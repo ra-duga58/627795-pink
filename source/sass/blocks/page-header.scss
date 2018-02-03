@@ -1,6 +1,40 @@
   .page-header {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
     background-color: #283645;
-    border: 4px green solid;
     margin: 0 auto;
     padding: 0;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .page-header__heading {
+    height: 25px;
+    min-width: 280px;
+    padding: 20px 20px;
+    background-color: #283645;
+  }
+
+  @media (min-width: $tablet-width) {
+    .page-header {
+      width: 620px;
+      .page-header__heading {
+        height: 70px;
+        padding: 20px 10px;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    .page-header {
+      width: 960px;
+
+      .page-header__heading {
+        height: 70px;
+        padding: 20px 20px;
+        background-image: url('../img/line.png');
+      }
+    }
   }

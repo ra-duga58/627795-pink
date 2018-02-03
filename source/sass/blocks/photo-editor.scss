@@ -1,7 +1,9 @@
 .photo-editor {
+  display: flex;
+  flex-direction: column;
   background-color: $gray;
-  border: 4px green solid;
-  padding: 20px 21px 30px;
+  width: 300px;
+  margin: 0 auto;
 }
 
 .photo-editor__btn {
@@ -10,4 +12,34 @@
   line-height: 18px;
   font-style: bold;
   color: #D22856;
+}
+
+.photo-editor__inner {
+  width: 280px;
+}
+
+@media (min-width: $tablet-width) {
+
+  .photo-editor {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 660px;
+  }
+  .photo-img {
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .photo-editor {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 960px;
+  }
+  .photo-img {
+    margin-right: 90px;
+  }
+  .photo-editor__inner {
+    width: 410px;
+  }
 }
