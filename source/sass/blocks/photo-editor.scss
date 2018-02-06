@@ -1,4 +1,5 @@
 .photo-editor {
+  @include container;
   display: flex;
   flex-direction: column;
   background-color: $gray;
@@ -10,8 +11,7 @@
   font-size: 18px;
   font-weight: 700;
   line-height: 18px;
-  font-style: bold;
-  color: #D22856;
+  color: #d22856;
 }
 
 .photo-editor__inner {
@@ -19,12 +19,11 @@
 }
 
 @media (min-width: $tablet-width) {
-
   .photo-editor {
     flex-direction: row;
     flex-wrap: wrap;
-    width: 660px;
   }
+
   .photo-img {
     margin-right: 20px;
   }
@@ -34,11 +33,12 @@
   .photo-editor {
     flex-direction: row;
     flex-wrap: wrap;
-    width: 960px;
   }
+
   .photo-img {
     margin-right: 90px;
   }
+
   .photo-editor__inner {
     width: 410px;
   }

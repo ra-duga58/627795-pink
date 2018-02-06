@@ -1,7 +1,6 @@
 .gallery {
-  background-color: #FFFFFF;
-  width: 320px;
-  margin: 0 auto;
+  @include container;
+  background-color: #ffffff;
 }
 
 .gallery__lead {
@@ -11,17 +10,4 @@
   font-style: normal;
   color: #000000;
   text-align: center;
-}
-
-@media (min-width: $tablet-width) {
-
-  .gallery {
-    width: 660px;
-  }
-}
-
-@media (min-width: $desktop-width) {
-  .gallery {
-    width: 960px;
-  }
 }

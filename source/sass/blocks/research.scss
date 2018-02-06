@@ -1,0 +1,41 @@
+.research {
+  @include container;
+  display: none;
+  background-color: $gray;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 32px;
+  color: #000000;
+}
+
+.research__wrapper {
+  display: flex;
+  align-items: center;
+  background-image: url("../img/icon-editor-diagram-fill.svg");
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+.research__container {
+  width: 310px;
+}
+
+.research__timer {
+  font-size: 76px;
+  font-weight: 700;
+  color: #d22856;
+  width: 310px;
+  text-align: center;
+}
+
+@media (min-width: $tablet-width) {
+  .research {
+    display: block;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .research {
+    display: block;
+  }
+}

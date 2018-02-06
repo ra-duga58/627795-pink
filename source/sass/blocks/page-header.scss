@@ -1,40 +1,44 @@
-  .page-header {
-    display: flex;
-    flex-direction: column;
-    width: 320px;
-    background-color: #283645;
-    margin: 0 auto;
-    padding: 0;
+.page-header {
+  @include container;
+  background-color: #283645;
+  min-height: 68px;
+}
 
-    background-repeat: no-repeat;
-    background-size: cover;
+.page-header__logo {
+  display: block;
+  min-height: 24px;
+  width: 80px;
+}
+
+.page-header__heading {
+  min-width: 280px;
+  position: relative;
+}
+
+@media (min-width: $tablet-width) {
+  .page-header__heading {
+    min-height: 111px;
+    padding: 20px 10px;
+  }
+  .page-header__logo {
+    width: 153px;
+    height: 46px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .page-header {
+    min-height: 111px;
+    background-image: url("../img/line.png");
   }
 
   .page-header__heading {
-    height: 25px;
-    min-width: 280px;
     padding: 20px 20px;
-    background-color: #283645;
   }
+}
 
-  @media (min-width: $tablet-width) {
-    .page-header {
-      width: 620px;
-      .page-header__heading {
-        height: 70px;
-        padding: 20px 10px;
-      }
-    }
-  }
+.page-header__logo {
+  background-image: url("../img/logo-pink-blue-mobile.svg");
+  background-repeat: no-repeat;
+}
 
-  @media (min-width: $desktop-width) {
-    .page-header {
-      width: 960px;
-
-      .page-header__heading {
-        height: 70px;
-        padding: 20px 20px;
-        background-image: url('../img/line.png');
-      }
-    }
-  }
