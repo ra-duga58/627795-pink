@@ -38,7 +38,7 @@
   text-decoration: none;
 }
 
-.site-list__link {
+.site-list__link a {
   &:hover {
     color: #d22856;
   }
@@ -47,6 +47,7 @@
     color: rgba(210, 40, 86, 0.3);
   }
 }
+
 .site-list__item--active {
   &:hover {
     color: #ffffff;

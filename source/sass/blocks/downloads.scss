@@ -9,6 +9,7 @@
   width: 280px;
   z-index: 1;
 }
+
 .downloads h1 {
   font-size: 40px;
   font-weight: 300;
@@ -16,6 +17,7 @@
   color: #ffffff;
   text-align: center;
 }
+
 .downloads__description {
   font-size: 14px;
   font-weight: 300;
@@ -28,6 +30,7 @@
   color: #ffffff;
   text-decoration: none;
 }
+
 .platforms-list {
   list-style: none;
   display: flex;
@@ -44,18 +47,21 @@
   width: 47px;
   height: 56px;
 }
+
 .platform-item--Android {
   background-image: url("../img/logo-android.svg");
   background-repeat: no-repeat;
   width: 47px;
   height: 56px;
 }
+
 .platform-item--Windows {
   background-image: url("../img/logo-microsoft.svg");
   background-repeat: no-repeat;
   width: 47px;
   height: 56px;
 }
+
 .downloads__btn {
   color: #ffffff;
   text-decoration: none;
