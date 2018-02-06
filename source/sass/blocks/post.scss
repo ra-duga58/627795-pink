@@ -63,11 +63,11 @@
 }
 
 @media (min-width: $tablet-width) {
-
   .post__list {
     flex-direction: row;
     flex-wrap: wrap;
   }
+
   .post--main {
     width: 620px;
   }
@@ -79,6 +79,7 @@
     flex-wrap: wrap;
     width: 940px;
   }
+  
   .post--main {
     width: 940px;
   }
