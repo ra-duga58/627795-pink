@@ -16,6 +16,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .contacts__inner-text {
@@ -38,8 +39,7 @@
 
 .contacts__map {
   background-image: url("../img/bg-map-mobile@1x.png");
-  min-height: 299px;
-  padding: 0;
+  padding-bottom: 300px;
 }
 
 @media (min-width: $tablet-width) {
@@ -50,7 +50,7 @@
   .contacts__items {
     flex-direction: column;
     flex-wrap: wrap;
-    width: 280px;
+    width: 100%;
   }
 
   .contacts__items--address {
