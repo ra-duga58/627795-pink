@@ -1,43 +1,61 @@
 .promo {
+  @include container;
+  background-image: url("../img/bg-back-mobile@1x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 470px;
   display: flex;
   flex-direction: column;
-  background-image: url('../img/bg-back-mobile@1x.jpg');
-  min-height: 480px;
   width: 320px;
-  margin: 0 auto;
+  position: relative;
 }
 
 .promo__heading {
   font-size: 24px;
   font-weight: 300;
   line-height: 30px;
-  font-style: light;
   color: #ffffff;
+  margin: 0;
 }
 
 .promo__img {
   width: 300px;
   min-height: 290px;
+  position: relative;
+  top: 10px;
 }
 
 @media (min-width: $tablet-width) {
-  .promo {
-    width: 620px;
-  }
   .promo__img {
-    order: 1;
-  }
-}
+    position: absolute;
+    margin-left: 170px;
+    margin-top: 46px;
+    min-height: 548px;
+    width: 470px;
 
-@media (min-width: $desktop-width) {
-  .promo {
-    width: 960px;
-    flex-direction: row;
+    & img {
+      height: 547px;
+      width: 470px;
+    }
   }
-}
 
-.promo__img {
-  order: 1;
-  position: absolute;
-  margin-left: 300px;
+  @media (min-width: $desktop-width) {
+    .promo {
+      flex-direction: row;
+    }
+
+    .promo__img {
+      position: absolute;
+      margin-left: 356px;
+      margin-bottom: 500px;
+      margin-top: 46px;
+      min-height: 548px;
+      width: 470px;
+
+      & img {
+        height: 547px;
+        width: 470px;
+      }
+    }
+  }
 }

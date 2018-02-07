@@ -1,21 +1,21 @@
 .features {
+  @include container;
   background-color: #ffffff;
   font-size: 24px;
   font-weight: 300;
   line-height: 32px;
-  font-style: light;
   color: #000000;
-  padding: 43px 30px;
-  margin: 0 auto;
-  width: 320px;
 }
 
 .features__name {
   font-size: 18px;
   font-weight: 700;
   line-height: 30px;
-  font-style: bold;
   color: #000000;
+}
+
+.features__lead {
+  text-align: center;
 }
 
 .features__text {
@@ -26,9 +26,9 @@
   color: #000000;
 }
 
-.features__items {
+.features__list {
   display: flex;
-  flex-derection: column;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 
@@ -38,35 +38,62 @@
   flex-direction: column;
 }
 
-.features__img {
-  display: none;
-  width: 186px;
+.features__item--friends {
+  background-image: url("../img/iphone-screen-mobile@1x.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  padding-bottom: 300px;
 }
 
-.features__img--visible {
-  display: block;
-  max-width: 186px;
-  order: 10;
+.features__img {
+  display: none;
 }
 
 @media (min-width: $tablet-width) {
-  .features {
-    width: 620px;
+  .features__wrapper {
+    display: flex;
   }
-  .features__img--visible {
-    display: none;
+
+  .features__img {
+    display: block;
+  }
+
+  .features__item--friends {
+    background-image: none;
+    padding-bottom: 0;
   }
 }
 
 @media (min-width: $desktop-width) {
-  .features {
-    width: 960px;
-  }
-  .features__img {
-    display: block;
-  }
-  .features__items {
-    flex-derection: column;
+  .features__list {
+    flex-direction: row;
     justify-content: space-around;
+  }
+
+  .features__img {
+    display: none;
+  }
+
+  .features__item--mood {
+    background-image: url("../img/iphone-screen-mobile@1x.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    padding-top: 320px;
+  }
+
+  .features__item--world {
+    background-image: url("../img/iphone-screen-mobile@1x.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    padding-top: 320px;
+  }
+
+  .features__item--friends {
+    background-image: url("../img/iphone-screen-mobile@1x.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    padding-top: 320px;
+    min-height: 210px;
+    padding-bottom: 0;
   }
 }

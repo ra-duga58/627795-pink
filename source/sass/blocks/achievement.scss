@@ -1,22 +1,9 @@
-    .achievement {
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 30px;
-      font-style: normal;
-      color: #000000;
-      padding: 54px 23px;
-      text-align: center;
-      margin: 0 auto;
-    }
-
-    @media (min-width: $tablet-width) {
-      .achievement {
-        width: 620px;
-      }
-    }
-
-    @media (min-width: $desktop-width) {
-      .achievement {
-        width: 620px;
-      }
-    }
+.achievement {
+  @include container;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 30px;
+  font-style: normal;
+  color: #000000;
+  text-align: center;
+}
