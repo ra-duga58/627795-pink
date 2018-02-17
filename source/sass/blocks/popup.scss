@@ -1,5 +1,27 @@
 .popup {
-  padding: 40px 25px;
+  @include container;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup__body-container {
+  padding: 20px;
+  width: 280px;
+}
+
+.popup__body {
+  text-align: center;
+}
+
+.popup__footer {
+  vertical-align: middle;
+  padding: 50px 0;
+}
+
+.popup__footer--success {
+  background-color: $gray;
+
 }
 
 .popup__text {
@@ -10,9 +32,33 @@
   color: #000000;
 }
 
+.popup__btn {
+  width: 280px;
+}
+
 .popup__title {
   font-size: 14px;
   font-weight: 700;
   line-height: 30px;
   color: #000000;
+}
+
+@media (min-width: $tablet-width) {
+  .popup__body--error {
+    width: 461px;
+  }
+
+  .popup__body--error {
+    width: 461px;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .popup__body--error {
+    width: 461px;
+  }
+
+  .popup__body--error {
+    width: 780px;
+  }
 }

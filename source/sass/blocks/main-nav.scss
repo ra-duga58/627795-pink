@@ -1,4 +1,5 @@
 .main-nav {
+  font-family: "Open Sans", "Arial", sans-serif;
   position: relative;
   width: 320px;
   min-height: 51px;
@@ -9,14 +10,13 @@
 .site-list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .site-list__item {
-  min-height: 63px;
   font-size: 18px;
   font-weight: 700;
   line-height: 32px;
@@ -33,9 +33,11 @@
 }
 
 .site-list__link {
+  display: block;
   color: #ffffff;
   text-transform: uppercase;
   text-decoration: none;
+  padding: 15px 20px;
 }
 
 .site-list__link a {
@@ -60,39 +62,73 @@
 
 .main-nav__toggle {
   position: absolute;
-  top: -34px;
-  left: 255px;
-  z-index: 1;
+  top: -52px;
+  right: 20px;
+
   display: block;
   width: 60px;
   height: 32px;
-  background-color: red;
   cursor: pointer;
   border: none;
-
-  &:hover,
-  &:active {
-    background-color: red;
-  }
+  background-color: transparent;
 }
 
 .main-nav--closed .main-nav__toggle::before {
   content: "";
-
   position: absolute;
-  top: 10px;
-  left: 17px;
-
-  width: 36px;
-  height: 2px;
-
+  top: 6px;
+  left: 5px;
+  width: 50px;
+  height: 4px;
   background-color: #ffffff;
   box-shadow: 0 8px 0 0 #ffffff, 0 16px 0 0 #ffffff;
 }
 
+.main-nav--closed .main-nav__toggle:hover::before {
+  background-color: #d22856;
+  box-shadow: 0 8px 0 0 #d22856, 0 16px 0 0 #d22856;
+}
+
 .main-nav--closed .main-nav__toggle:active::before {
-  background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 0 0 rgba(255, 255, 255, 0.3), 0 16px 0 0 rgba(255, 255, 255, 0.3);
+  background-color: $light-pink;
+  box-shadow: 0 8px 0 0 $light-pink, 0 16px 0 0 $light-pink;
+}
+
+.main-nav--opened .main-nav__toggle {
+  top: -52px;
+  right: 12px;
+}
+
+.main-nav--opened .main-nav__toggle::before,
+.main-nav--opened .main-nav__toggle::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 27px;
+  width: 28px;
+  height: 5px;
+  background-color: #ffffff;
+  box-shadow: none;
+}
+
+.main-nav--opened .main-nav__toggle::before {
+  transform: rotate(45deg);
+}
+
+.main-nav--opened .main-nav__toggle::after {
+  transform: rotate(-45deg);
+}
+
+.main-nav--opened .main-nav__toggle:hover::before,
+.main-nav--opened .main-nav__toggle:hover::after {
+  background-color: #d22856;
+  box-shadow: none;
+}
+
+.main-nav--opened .main-nav__toggle:active::before,
+.main-nav--opened .main-nav__toggle:active::after {
+  background-color: $light-pink;
+  box-shadow: none;
 }
 
 @media (min-width: $tablet-width) {
@@ -102,11 +138,14 @@
     align-items: center;
   }
 
-  .main-nav__toggle {
-    position: absolute;
-    top: -94px;
-    left: 545px;
-    z-index: 1;
+  .main-nav--opened .main-nav__toggle {
+    top: -71px;
+    right: 12px;
+  }
+
+  .main-nav--closed .main-nav__toggle {
+    top: -71px;
+    right: 12px;
   }
 
   .main-nav {
@@ -118,48 +157,25 @@
   }
 }
 
-.main-nav-opened .main-nav__toggle {
-  top: 0;
-  right: auto;
-  left: 0;
-
-  &::before,
-  &::after {
-    content: "";
-
-    position: absolute;
-    top: 24px;
-    left: 18px;
-    width: 36px;
-    height: 2px;
-    background-color: #ffffff;
-  }
-
-  &::before {
-    transform: rotate(45deg);
-    box-shadow: none;
-  }
-
-  &::after {
-    transform: rotate(-45deg);
-  }
-
-  &:active::before,
-  &:active::after {
-    background-color: rgba(255, 255, 255, 0.3);
-  }
-}
-
 @media (min-width: $desktop-width) {
+  .main-nav {
+    margin-left: 273px;
+    margin-top: -86px;
+    background-color: transparent;
+    font-size: 18px;
+    line-height: 18px;
+    width: 656px;
+    padding: 21px 12px 25px 18px;
+  }
+
+
   .site-list {
-    width: 700px;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
   }
 
   .site-list__item {
-    justify-content: center;
     text-transform: none;
     font-size: 18px;
     font-weight: 400;
@@ -167,18 +183,15 @@
     font-style: normal;
     background: transparent;
     border: none;
-    padding: 10px;
-  }
-
-  .main-nav {
-    margin-left: 150px;
-    margin-top: -87px;
-    width: 700px;
-    min-height: 70px;
-    background-color: transparent;
   }
 
   .main-nav__toggle {
     display: none;
   }
+
+  .site-list__link {
+    text-transform: none;
+    padding: 9px;
+  }
 }
+

@@ -5,17 +5,26 @@
   line-height: 18px;
   color: #ffffff;
   min-height: 270px;
-  padding: 28px 20px;
-  width: 280px;
+  width: 100%;
+  margin: 0 auto;
   z-index: 1;
 }
 
-.downloads h1 {
+.downloads__wrapper {
+  @include container;
+  padding: 28px 0;
+}
+
+.downloads__title {
   font-size: 40px;
   font-weight: 300;
   line-height: 48px;
   color: #ffffff;
   text-align: center;
+  margin: 0;
+  display: none;
+  width: 280px;
+  padding: 64px 33px 30px;
 }
 
 .downloads__description {
@@ -23,7 +32,6 @@
   font-weight: 300;
   line-height: 24px;
   color: #ffffff;
-  width: 280px;
 }
 
 .downloads__link {
@@ -35,8 +43,6 @@
   list-style: none;
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  min-height: 27px;
   padding: 0;
   width: 230px;
 }
@@ -49,8 +55,10 @@
 }
 
 .platform-item--Android {
+
   background-image: url("../img/logo-android.svg");
   background-repeat: no-repeat;
+  background-position: bottom;
   width: 47px;
   height: 56px;
 }
@@ -58,6 +66,7 @@
 .platform-item--Windows {
   background-image: url("../img/logo-microsoft.svg");
   background-repeat: no-repeat;
+  background-position: bottom;
   width: 47px;
   height: 56px;
 }
@@ -71,6 +80,7 @@
   vertical-align: top;
   background-color: transparent;
   padding: 17px 36px;
+  margin: 0 18px;
 }
 
 @media (min-width: $tablet-width) {
@@ -78,11 +88,47 @@
     background-color: transparent;
     min-height: 547px;
   }
+
+  .downloads__wrapper {
+    width: 364px;
+    margin-left: 48px;
+  }
+
+  .downloads__title {
+    display: block;
+  }
+
+  .downloads__btn {
+    padding: 17px 49px;
+  }
+
+  .downloads__platforms {
+    margin: 0 22px;
+  }
+
+  .platforms__list {
+    padding: 23px 31px;
+    text-align: center;
+  }
+
+  .downloads__description {
+    font-size: 18px;
+    line-height: 24px;
+  }
 }
 
 @media (min-width: $desktop-width) {
   .downloads {
     background-color: transparent;
     min-height: 547px;
+  }
+
+  .downloads__title {
+    display: block;
+    font-size: 50px;
+  }
+  .downloads__btn {
+    padding: 17px 39px;
+    font-size: 21px;
   }
 }

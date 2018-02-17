@@ -1,35 +1,71 @@
 .research {
-  @include container;
-  display: none;
-  background-color: $gray;
+  font-family: "Open Sans", "Arial", sans-serif;
   font-size: 24px;
   font-weight: 300;
   line-height: 32px;
   color: #000000;
+  display: none;
 }
 
 .research__wrapper {
+  @include container;
   display: flex;
-  align-items: center;
-  background-image: url("../img/icon-editor-diagram-fill.svg");
-  background-repeat: no-repeat;
-  background-position: left;
 }
 
 .research__container {
   width: 310px;
 }
 
+.research__title {
+  display: block;
+  font-size: 30px;
+  line-height: 34px;
+  margin-bottom: 9px;
+}
+
 .research__timer {
-  font-size: 76px;
+  display: block;
+  font-size: 96px;
   font-weight: 700;
   color: #d22856;
   width: 310px;
-  text-align: center;
+}
+
+.research__time {
+  padding: 115px 65px 188px;
+}
+
+.research__time::before {
+  content: "";
+  position: absolute;
+  background-image: url("../img/icon-timer.svg");
+  background-repeat: no-repeat;
+  width: 240px;
+  height: 278px;
+  margin: -136px 100px 136px -64px;
+}
+
+.research__text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+  margin: 0;
+}
+
+.research__link {
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+  color: #d22856;
 }
 
 @media (min-width: $tablet-width) {
   .research {
+    display: block;
+  }
+
+  br {
     display: block;
   }
 }
@@ -37,5 +73,50 @@
 @media (min-width: $desktop-width) {
   .research {
     display: block;
+    margin-top: 126px;
+    background-color: $gray;
+  }
+
+  .research__wrapper {
+    padding-bottom: 18px;
+  }
+
+  .research__time {
+    font-size: 120px;
+    padding: 100px 81px 188px;
+  }
+
+  .research__timer {
+    margin-right: 56px;
+  }
+
+  .research__text {
+    font-size: 18px;
+    line-height: 30px;
+    width: 530px;
+    padding: 11px 0 29px;
+  }
+
+  .research__link {
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  br {
+    display: none;
+  }
+
+  .research__desctop {
+    display: block;
+  }
+
+  .research__time::before {
+    content: "";
+    position: absolute;
+    background-image: url("../img/icon-timer-big.svg");
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 345px;
+    margin: -173px 90px 131px -81px;
   }
 }
