@@ -10,4 +10,19 @@
   font-style: normal;
   color: #000000;
   text-align: center;
+  padding: 0 20px;
+  margin-bottom: 50px;
+}
+
+@media (min-width: $tablet-width) {
+  .gallery__lead {
+    font-size: 18px;
+    line-height: 30px;
+    padding: 0 17px;
+    margin-bottom: 76px;
+  }
+
+  .gallery__br {
+    display: none;
+  }
 }

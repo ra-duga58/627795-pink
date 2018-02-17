@@ -1,23 +1,30 @@
+.posts {
+  @include container;
+}
+
 .post {
   display: flex;
   flex-direction: column;
   width: 280px;
-  background-color: $gray;
   font-size: 14px;
   font-weight: 400;
   line-height: 30px;
   font-style: normal;
   color: #000000;
-  margin: 10px 10px;
+  margin: 10px;
+  background-color: $gray;
 }
 
 .post--main {
   margin: 0;
+  width: 320px;
 }
 
 .post__list {
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  margin: 0;
 }
 
 .post__author {
@@ -40,26 +47,75 @@
   font-style: normal;
   color: #d22856;
   text-transform: uppercase;
+  text-decoration: none;
+}
+
+.post__button {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
 }
 
 .post__btn {
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 24px;
-  font-style: normal;
-  color: #d22856;
+  display: none;
+}
+
+.post__action {
+  position: relative;
+  padding: 10px 9px 0;
+}
+
+.post__button::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 19px;
+  left: 0;
+  background-image: url("../img/icon-heart.svg");
+  background-repeat: no-repeat;
+}
+
+.post__today {
+  position: relative;
 }
 
 .post__rubric {
+  position: absolute;
   background-color: #d22856;
   font-size: 12px;
   font-weight: 700;
   line-height: 24px;
+  width: 140px;
+  top: 0;
+  right: 20px;
 }
 
 .rubric__text {
+  display: block;
+  padding: 5px 19px;
   color: #ffffff;
   text-transform: uppercase;
+}
+
+.post__inner-main {
+  margin: 0 20px 0;
+  padding: 4px 17px 17px;
+}
+
+.post__comment {
+  margin: -3px 0;
+  line-height: 24px;
+}
+
+.post__description {
+  margin: -2px 0 -3px;
+}
+
+.post__inner {
+  padding: 8px 17px 20px;
+  background-color: $gray;
+  line-height: 24px;
 }
 
 @media (min-width: $tablet-width) {
@@ -70,6 +126,7 @@
 
   .post--main {
     width: 620px;
+    min-height: 510px;
   }
 }
 

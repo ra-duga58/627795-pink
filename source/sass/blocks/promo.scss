@@ -1,13 +1,27 @@
 .promo {
-  @include container;
   background-image: url("../img/bg-back-mobile@1x.jpg");
   background-repeat: no-repeat;
+  position: relative;
+  margin: 0 auto;
   background-size: cover;
-  min-height: 470px;
+  width: 100%;
+
+  @media (min-resolution: $retina-dpi, $retina-dppx) {
+    .promo {
+      background-image: url("../img/bg-map-mobile@2x.jpg");
+      width: 100%;
+    }
+  }
+}
+
+.promo__wrapper {
+  @include container;
   display: flex;
   flex-direction: column;
-  width: 320px;
-  position: relative;
+}
+
+.promo__wrapper--photo {
+  padding: 35px 0 88px 0;
 }
 
 .promo__heading {
@@ -18,44 +32,81 @@
   margin: 0;
 }
 
+.promo__heading--photo {
+  text-align: center;
+}
+
+.promo__heading--form {
+  text-align: center;
+}
+
 .promo__img {
-  width: 300px;
-  min-height: 290px;
   position: relative;
   top: 10px;
 }
 
 @media (min-width: $tablet-width) {
+  .promo {
+    width: 100%;
+    background-image: url("../img/bg-back-tablet@1x.jpg");
+    background-repeat: no-repeat;
+    position: relative;
+    margin: 0 auto;
+    background-size: cover;
+
+    @media (min-resolution: $retina-dpi, $retina-dppx) {
+      .promo {
+        background-image: url("../img/bg-map-tablet@2x.jpg");
+      }
+    }
+  }
+
   .promo__img {
     position: absolute;
     margin-left: 170px;
     margin-top: 46px;
-    min-height: 548px;
-    width: 470px;
+  }
 
-    & img {
-      height: 547px;
-      width: 470px;
+  .promo__heading--photo {
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  .promo__heading--form {
+    font-size: 50px;
+    line-height: 50px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .promo {
+    flex-direction: row;
+    width: 100%;
+    background-image: url("../img/bg-back-desktop@1x.jpg");
+    background-repeat: no-repeat;
+    position: relative;
+    margin: 0 auto;
+    background-size: cover;
+
+    @media (min-resolution: $retina-dpi, $retina-dppx) {
+      .promo {
+        background-image: url("../img/bg-map-desktop@2x.jpg");
+      }
     }
   }
 
-  @media (min-width: $desktop-width) {
-    .promo {
-      flex-direction: row;
-    }
+  .promo__img {
+    position: absolute;
+    margin-left: 356px;
+    margin-bottom: 500px;
+    margin-top: 46px;
+  }
 
-    .promo__img {
-      position: absolute;
-      margin-left: 356px;
-      margin-bottom: 500px;
-      margin-top: 46px;
-      min-height: 548px;
-      width: 470px;
+  .promo__br {
+    display: block;
+  }
 
-      & img {
-        height: 547px;
-        width: 470px;
-      }
-    }
+  .promo__wrapper--form {
+    padding: 35px 0 88px 0;
   }
 }
