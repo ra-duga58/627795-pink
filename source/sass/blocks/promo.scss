@@ -4,12 +4,12 @@
   position: relative;
   margin: 0 auto;
   background-size: cover;
-  width: 320px;
+  width: 100%;
 
   @media (min-resolution: $retina-dpi, $retina-dppx) {
     .promo {
       background-image: url("../img/bg-map-mobile@2x.jpg");
-      width: 320px;
+      width: 100%;
     }
   }
 }

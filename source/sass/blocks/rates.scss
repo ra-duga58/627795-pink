@@ -6,27 +6,27 @@
   color: #000000;
   padding: 0 0 45px;
   background-color: $gray;
-  display: none;
-  display: none;
+  width: 100%;
 }
 
 .rates__wrapper {
   @include container;
-  padding: 0 20px;
+}
+
+.rates__inner {
+  position: relative;
+  margin-top: 80px;
+  overflow: hidden;
+  padding-bottom: 300px;
 }
 
 .rates__table {
   background-color: #ffffff;
-  overflow: hidden;
   width: 1120px;
   border-collapse: collapse;
-  display: flex;
-  align-items: center;
-  margin-top: 80px;
-}
-
-tbody {
-  padding-left: 20px;
+  margin: 0 auto;
+  position: absolute;
+  left: -541px;
 }
 
 .rates__table-header {
