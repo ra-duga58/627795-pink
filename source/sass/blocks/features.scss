@@ -5,18 +5,29 @@
   font-weight: 300;
   line-height: 32px;
   color: #000000;
-  margin-top: 48px;
-  padding: 0 10px;
+  margin: 48px 0 0 0;
 }
 
 .features__wrap {
-  @include container;
 }
 
 .features__wrapper {
   margin-top: 87px;
-  padding: 0 20px;
   text-align: center;
+  position: relative;
+  background-color: $gray;
+  width: 100%;
+}
+.features__wrapper::before {
+  content: "";
+  background-image: url("../img/bg-triangle-white.svg");
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+  position: absolute;
+  left: 0;
+  top: -74px;
+  width: 100%;
+  height: 94px;
 }
 
 .features__name {
@@ -28,6 +39,7 @@
 }
 
 .features__lead {
+  @include container;
   text-align: center;
   background-color: #ffffff;
 }
@@ -52,38 +64,48 @@
 }
 
 .features__item {
-  width: 280px;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+.features__item-content {
+  padding-bottom: 11px;
 }
 
 .features__item--friends {
-  background-image: url("../img/iphone-screen-mobile@1x.png");
-  width: 268px;
+  position: relative;
+  padding-bottom: 254px;
+}
+.features__item--friends::after {
+  content: "";
+  background-image: url("../img/iphone-screen-mob@1x.png");
   background-repeat: no-repeat;
-  background-size: 160px auto;
-  background-position: bottom;
-  padding-bottom: 312px;
+  position: relative;
+  top: 0px;
+  left: 50%;
+  margin-left: -78px;
+  width: 158px;
+  height: 278px;
+}
 
-  @media (min-resolution: $retina-dpi, $retina-dppx) {
-    .features__item--friends {
-      background-image: url("../img/iphone-screen-mobile@2x.png");
-    }
+@media (min-resolution: $retina-dpi, $retina-dppx) {
+  .features__item--friends::after {
+    background-image: url("../img/iphone-screen-mob@2x.png");
   }
 }
 
 @media (min-width: $tablet-width) {
-  .features {
-    padding: 0 20px;
-    margin-bottom: 80px;
-  }
 
   .features__wrapper {
     display: flex;
     background-color: $gray;
-    margin-top: 0;
-    padding: 0;
+    margin-bottom: 105px;
     text-align: left;
+  }
+
+  .features__item--friends::after {
+    display: none;
   }
 
   .features__br {
@@ -94,7 +116,7 @@
     font-size: 40px;
     font-weight: 300;
     line-height: 48px;
-    padding-bottom: 50px;
+    padding-bottom: 130px;
     text-align: center;
     margin-top: 50px;
   }
@@ -113,6 +135,9 @@
     width: 310px;
     padding-bottom: 6px;
   }
+  .features__item-content {
+    padding-bottom: 0;
+  }
 
   .features__text--position {
     margin-bottom: 0;
@@ -120,21 +145,19 @@
 
   .features__img {
     width: 270px;
+    height: 483px;
     background-image: url("../img/iphone-screen-3-tablet@1x.png");
     background-repeat: no-repeat;
     background-size: 270px auto;
-    margin-right: 40px;
+    margin: -60px 46px 0 20px;
+    position: relative;
+  }
 
     @media (min-resolution: $retina-dpi, $retina-dppx) {
       .features__img {
         background-image: url("../img/iphone-screen-3-tablet@2x.png");
       }
     }
-  }
-
-  .features__list {
-    margin-top: 51px;
-    width: 310px;
   }
 
   .features__name {
@@ -151,35 +174,34 @@
     background-image: none;
     padding-bottom: 0;
   }
-}
+
 
 @media (min-width: $desktop-width) {
   .features {
-    margin-top: 171px;
-  }
-
-  .features__wrap {
-    padding: 0 10px;
-  }
-
-  .features__wrapper {
-    padding-left: 30px;
+    margin: 0;
   }
 
   .features__lead {
     font-size: 50px;
     line-height: 60px;
-    padding: 0;
-    padding-left: 14px;
     width: 920px;
+    padding-bottom: 168px;
+  }
+
+  .features__wrapper {
+    margin-bottom: 0;
+  }
+  .features__wrapper::before {
+    top: -94px;
   }
 
   .features__list {
     flex-direction: row;
     flex-wrap: nowrap;
     text-align: center;
-    margin-top: 76px;
+    margin: -90px auto 0;
     justify-content: space-between;
+    z-index: 1;
   }
 
   .features__name {
@@ -202,7 +224,8 @@
   .features__item {
     display: flex;
     margin-right: 81px;
-    width: 270px;
+    width: 280px;
+    box-sizing: border-box;
   }
 
   .features__item--mood {
@@ -211,7 +234,7 @@
     background-repeat: no-repeat;
     padding-top: 320px;
     background-size: 270px auto;
-    width: 270px;
+
 
     @media (min-resolution: $retina-dpi, $retina-dppx) {
       .features__item--mood {
@@ -226,7 +249,7 @@
     background-repeat: no-repeat;
     padding-top: 320px;
     background-size: 270px auto;
-    width: 270px;
+
 
     @media (min-resolution: $retina-dpi, $retina-dppx) {
       .features__item--world {
@@ -240,9 +263,10 @@
     background-position: top;
     background-repeat: no-repeat;
     background-size: 270px auto;
-    width: 270px;
+
     padding-top: 320px;
     padding-bottom: 0;
+    margin: 0;
 
     @media (min-resolution: $retina-dpi, $retina-dppx) {
       .features__item--friends {

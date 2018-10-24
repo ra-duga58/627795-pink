@@ -1,10 +1,12 @@
 .photo-editor {
-  @include container;
   font-family: "Open Sans", "Arial", sans-serif;
+  padding-bottom: 41px;
+  background-color: $gray;
+}
+
+.photo-editor__wrapper {
   display: flex;
   flex-direction: column;
-  background-color: $gray;
-  padding-bottom: 29px;
 }
 
 .photo-editor__btns {
@@ -23,8 +25,13 @@
   border-radius: 50px;
 }
 
+.photo-editor__btns-inner {
+  width: 280px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
 .photo-editor__btn--active {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 
   &:hover {
     color: #ffffff;
@@ -53,41 +60,78 @@
 }
 
 .photo-editor__inner {
-  width: 280px;
-  padding: 10px 20px;
+  width: 240px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 19px;
+  margin: 0 auto;
 }
 
 .photo-editor__img {
   width: 280px;
   padding: 20px;
+  margin: 0 auto;
 }
 
 .photo-editor__tools {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0 34px 21px;
+  position: relative;
+  padding-bottom: 72px;
 }
 
 .photo-editor__icon {
-  margin-right: 35px;
+  position: relative;
+  cursor: pointer;
+  margin-right: 16px;
+  margin-left: 16px;
+  width: 48px;
+  height: 50px;
 }
+
 
 .photo-editor__icon--active {
   .icon-color {
     fill: #d22856;
   }
+}
 
-  .filter-range {
-    display: block;
+.photo-editor__icon-svg {
+  &:hover {
+    .icon-color {
+      fill: #8D949B;
+    }
+  }
+}
+.photo-editor__fields {
+  display: flex;
+  flex-direction: column;
+}
+.filter-range {
+  position: absolute;
+  width: 240px;
+  height: 14px;
+  &:active {
+    .filter-range__toggle {
+      background: $pink;
+    }
   }
 }
 
-.filter-range {
+.filter-range .filter-range--crop {
+  display: block;
+}
+
+.filter-range--fill,
+.filter-range--saturation {
   display: none;
-  position: relative;
-  width: 240px;
-  height: 15px;
+}
+
+.photo-editor__icon-svg--contrast {
+  margin-top: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 .filter-range__bar {
@@ -96,14 +140,14 @@
   left: 50%;
   width: 100%;
   height: 2px;
-  background-color: #000000;
+  background-color: #283645;
   transform: translate(-50%, -50%);
 }
 
 .filter-range__toggle {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 162px;
   width: 11px;
   height: 11px;
   background-color: $gray;
@@ -112,20 +156,153 @@
   transform: translate(-50%, -50%);
 }
 
-hr {
-  border: 1px solid #dddfe0;
+.photo-editor__btns {
+  position: relative;
+  padding-top: 38px;
+}
+
+.photo-editor__btns::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -1px;
+  left: 0;
   width: 100%;
-  margin: 27px 0;
+  height: 1px;
+  background-color: #dddfe0;
+}
+
+.filter-range--crop {
+  position: relative;
+  height: 14px;
+  right: 16px;
+  padding-top: 22px;
+  padding-bottom: 22px;
 }
 
 @media (min-width: $tablet-width) {
   .photo-editor {
-    flex-direction: row;
-    flex-wrap: wrap;
+    background-color: $gray;
+    padding-bottom: 0;
   }
 
+  .photo-editor__wrapper {
+    @include container;
+    flex-direction: row;
+  }
+
+  .photo-editor__inner {
+    width: auto;
+    padding: 0;
+    margin: 0;
+  }
+
+  .photo-editor__icon {
+    margin: 0;
+  }
+
+  .photo-editor__tools {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+  }
+
+  .photo-editor__fields {
+    padding-top: 40px;
+    padding-bottom: 54px;
+    margin-left: 45px;
+    width: 275px;
+    flex-grow: 1;
+  }
+  .photo-editor__btn--active {
+    margin-bottom: 25px;
+  }
+
+  .photo-editor__btn {
+    padding: 15px 30px 16px
+  }
+
+  .photo-editor__btns {
+    margin-top: auto;
+    position: relative;
+    padding-top: 38px;
+  }
+
+  .photo-editor__btns::before {
+    display: none;
+  }
+
+  .photo-editor__btns-inner {
+    display: flex;
+    flex-direction: column;
+    padding: 0 13px 0 2px;
+    width: 260px;
+    margin: 0;
+  }
+
+  .photo-editor__icon {
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 -1px #dddfe0;
+    padding-top: 25px;
+    padding-bottom: 24px;
+    width: auto;
+    height: auto;
+    margin: 0;
+  }
+
+  .photo-editor__icon-svg {
+    position: relative;
+    margin-right: 1px;
+    margin-left: 3px;
+    width: 24px;
+    height: 24px;
+  .icon-color {
+      fill: $pink;
+    }
+  }
+
+  .photo-editor__icon-svg--contrast {
+    margin: 0;
+  }
   .photo-img {
     margin-right: 20px;
+  }
+
+  .filter-range {
+    display: block;
+    position: relative;
+    padding: 0 18px 0 20px;
+    width: 84%;
+    right: 0;
+  }
+
+  .filter-range__bar {
+    width: 84%;
+  }
+
+  .photo-editor__img {
+    width: 300px;
+    height: 400px;
+    margin: 0;
+    padding: 57px 0 57px 0;
+  }
+
+  .photo-editor__fields {
+    padding-bottom: 57px;
+    margin-left: 90px;
+  }
+
+  .filter-range__toggle--crop {
+    left: 202px;
+  }
+
+  .filter-range__toggle--fill {
+    left: 62px;
+  }
+
+  .filter-range__toggle--saturation {
+    left: 160px;
   }
 }
 
@@ -133,6 +310,22 @@ hr {
   .photo-editor {
     flex-direction: row;
     flex-wrap: wrap;
+    background: none;
+  }
+
+  .photo-editor__wrapper {
+    background: $gray;
+    padding-left: 90px;
+    padding-right: 60px;
+    width: 810px;
+  }
+
+  .photo-editor__tools {
+    padding-bottom: 53px;
+  }
+
+  .photo-editor__img {
+    margin: 0;
   }
 
   .photo-img {
@@ -140,6 +333,42 @@ hr {
   }
 
   .photo-editor__inner {
-    width: 410px;
+    width: 430px;
+  }
+
+  .photo-editor__icon {
+    margin: 0;
+    padding-top: 12px;
+    padding-bottom: 13px;
+  }
+
+  .photo-editor__icon-svg {
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: 0;
+    margin: 0;
+  }
+
+  .filter-range {
+    padding: 14px 30px 10px 20px;
+  }
+
+  .filter-range__toggle--fill {
+    left: 261px;
+  }
+
+  .photo-editor__btns-inner {
+    flex-direction: row;
+    width: auto;
+    padding: 0;
+  }
+  .photo-editor__btn {
+    width: 183px;
+    margin: 0;
+  }
+
+  .photo-editor__btn:last-child {
+    margin-left: auto;
   }
 }

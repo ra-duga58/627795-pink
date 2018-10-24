@@ -1,10 +1,48 @@
 .achievement {
-  @include container;
   font-family: "Open Sans", "Arial", sans-serif;
   font-size: 14px;
-  font-weight: 400;
   line-height: 30px;
-  font-style: normal;
-  color: #000000;
+  font-weight: 400;
   text-align: center;
+  width: 100%;
+  padding-top: 45px;
+
+}
+
+.achievement__title--invisible {
+  display: none;
+}
+
+
+.achievement__wrapper {
+  @include container;
+}
+.achievement__title {
+  margin: 0;
+}
+@media (min-width: $tablet-width) {
+  .achievement {
+    font-size: 18px;
+    padding-top: 92px;
+  }
+
+  .achievement__title--invisible {
+    display: inline;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+  }
+}
+
+
+@media (min-width: $desktop-width) {
+  .achievement {
+    font-size: 18px;
+  }
+
+  .achievement__lead {
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-bottom: 68px;
+  }
 }
