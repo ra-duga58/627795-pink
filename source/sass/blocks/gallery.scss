@@ -1,6 +1,7 @@
 .gallery {
   @include container;
   background-color: #ffffff;
+  padding-top: 46px;
 }
 
 .gallery__lead {
@@ -10,19 +11,32 @@
   font-style: normal;
   color: #000000;
   text-align: center;
-  padding: 0 20px;
-  margin-bottom: 50px;
+  padding: 0 34px;
+  padding-left: 35px;
+  padding-right: 35px;
+  margin: 0 auto 48px;
+
 }
 
 @media (min-width: $tablet-width) {
+  .gallery {
+    padding-top: 92px;
+  }
   .gallery__lead {
     font-size: 18px;
     line-height: 30px;
-    padding: 0 17px;
+    padding: 0 45px;
+    padding-left: 60px;
+    padding-right: 60px;
     margin-bottom: 76px;
-  }
 
-  .gallery__br {
-    display: none;
+  }
+}
+
+@media  (min-width: $desktop-width) {
+  .gallery__lead {
+    padding-left: 186px;
+    padding-right: 186px;
+    margin-bottom: 88px;
   }
 }

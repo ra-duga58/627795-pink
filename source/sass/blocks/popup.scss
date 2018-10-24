@@ -1,27 +1,45 @@
 .popup {
-  @include container;
   padding: 40px 0;
   display: flex;
   flex-direction: column;
-}
-
-.popup__body-container {
-  padding: 20px;
-  width: 280px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.5);
+  transform: translate(-50%, -50%);
+  display: none;
 }
 
 .popup__body {
-  text-align: center;
+  padding: 0 20px 36px 20px;
+}
+
+.popup--success {
+  padding-bottom: 0;
+ }
+
+.popup__body--success {
+  padding-bottom: 20px;
+}
+
+.popup__body--error {
+  padding-bottom: 20px;
+}
+
+.popup--error {
+  padding-bottom: 0;
 }
 
 .popup__footer {
   vertical-align: middle;
-  padding: 50px 0;
 }
 
 .popup__footer--success {
   background-color: $gray;
-
+  padding: 50px 0;
 }
 
 .popup__text {
@@ -44,21 +62,48 @@
 }
 
 @media (min-width: $tablet-width) {
-  .popup__body--error {
+  .popup--error {
     width: 461px;
   }
 
   .popup__body--error {
+    width: 300px;
+  }
+
+  .popup--success {
     width: 461px;
+  }
+
+  .popup__body--success {
+    width: 300px;
+    margin: 0 auto;
   }
 }
 
-@media (min-width: $tablet-width) {
-  .popup__body--error {
-    width: 461px;
+@media (min-width: $desktop-width) {
+  .popup {
+
+  }
+
+  .popup__body--success {
+    padding-bottom: 40px;
+    width: 360px;
+    margin: 0 auto;
   }
 
   .popup__body--error {
+    padding-bottom: 40px;
+  }
+
+  .popup--error {
+    width: 461px;
+  }
+
+  .popup--success {
     width: 780px;
+  }
+
+  .popup__btn--desktop {
+    width: 461px;
   }
 }

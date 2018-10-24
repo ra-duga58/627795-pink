@@ -2,7 +2,7 @@
   @include container;
   font-family: "Open Sans", "Arial", sans-serif;
   background-color: #ffffff;
-  margin-top: 54px;
+  margin-top: 40px;
 }
 
 .page-footer--index {
@@ -42,13 +42,47 @@
   align-items: center;
 }
 
-.logo-htmlacademy {
+.page-footer__htmlacademy {
+  fill: $pink;
+
   &:hover {
-    fill: #d22856;
+    fill: #283645;
   }
 
   &:active {
     fill: #bec2c7;
+  }
+}
+
+.page-footer__stars,
+.page-footer__star,
+.page-footer__glasses-crop {
+  display: none;
+}
+
+.page-footer__glasses {
+  fill: $pink;
+}
+
+.page-footer__sign {
+  fill: #283645;
+}
+
+.page-footer__logo {
+  &:hover {
+    .page-footer__sign {
+      fill: $pink;
+    }
+  }
+
+  &:active {
+    .page-footer__sign {
+      fill: rgba(40, 54, 69, 0.3)
+    }
+
+    .page-footer__glasses {
+      fill: rgba(210, 40, 86, 0.3)
+    }
   }
 }
 
@@ -78,6 +112,9 @@
   .page-footer__logo {
     margin-right: 44px;
   }
+  .page-footer--index {
+    display: block;
+  }
 }
 
 @media (min-width: $desktop-width) {
@@ -91,8 +128,48 @@
     justify-content: space-between;
   }
 
+  .page-footer__stars {
+    fill: #283645;
+  }
+
+  .page-footer__star {
+    fill: $pink;
+  }
+
+  .page-footer__glasses-crop {
+    fill: $pink;
+  }
+
   .page-footer__logo {
     width: 182px;
     margin-right: 15px;
+
+    &:hover {
+      .page-footer__sign {
+        fill: $pink;
+      }
+    }
+
+    &:active {
+      .page-footer__sign,
+      .page-footer__stars {
+        fill: rgba(40, 54, 69, 0.3)
+      }
+
+      .page-footer__glasses-crop,
+      .page-footer__star {
+        fill: rgba(210, 40, 86, 0.3)
+      }
+    }
+  }
+
+  .page-footer__stars,
+  .page-footer__star,
+  .page-footer__glasses-crop {
+    display: block;
+  }
+
+  .page-footer__glasses {
+    display: none;
   }
 }

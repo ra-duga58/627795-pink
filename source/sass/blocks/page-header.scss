@@ -1,40 +1,155 @@
 .page-header {
   background-color: #283645;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Open Sans", "Arial", sans-serif;
   width: 100%;
+  position: absolute;
+  background-color: rgba(0,0,0,.3);
+  color: #fff;
+  z-index: 2;
 }
-
-.page-header__wrapper {
-  @include container;
+.page-header--full {
+  position: relative;
 }
 
 .page-header__logo {
   display: block;
   width: 80px;
-  padding: 20px 20px 13px;
+  padding: 52px 20px 13px;
+  background: url("../img/logo-pink-white-mobile.svg") no-repeat center;
+  &:hover {
+    background: url("../img/logo-pink-pink-mobile.svg") no-repeat center;
+  }
+
+  &:active {
+    background: url("../img/logo-pink-gray-mobile.svg") no-repeat center;
+  }
+
+}
+
+.logo-pink-header__svg,
+.logo-pink-header__star,
+.logo-pink-header__glasses-crop,
+.logo-pink-header__glasses,
+.logo-pink-header__stars {
+  display: none;
+}
+
+.logo-pink-header__sign {
+  fill: #ffffff;
+}
+
+.logo-pink-header__svg {
+  &:hover {
+    .logo-pink-header__sign {
+      fill: $pink;
+    }
+  }
+
+  &:active {
+    .logo-pink-header__sign {
+      fill: $activ-color;
+    }
+  }
+}
+
+.page-header__heading {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 @media (min-width: $tablet-width) {
-  .page__header {
-    width: 660px;
-    margin: 0 auto;
+  .page-header {
+    position: absolute;
+    min-height: 110px;
+  }
+
+  .page-header--full {
+    position: relative;
+  }
+
+  .logo-pink-header__glasses {
+    display: block;
+    fill: #ffffff;
   }
 
   .page-header__logo {
-    padding: 31px 25px;
-    width: 153px;
-    height: 46px;
+    background-image: none;
+    &:hover {
+      background: none;
+    }
+    &:active {
+      background-image: none;
+    }
+    padding-top: 27px;
+    padding-bottom: 43px;
+    width: 147px;
+    height: 40px;
+  }
+
+  .logo-pink-header__svg {
+    display: block;
+
+    &:hover {
+      .logo-pink-header__sign,
+      .logo-pink-header__glasses {
+        fill: $pink;
+      }
+    }
+
+    &:active {
+      .logo-pink-header__sign,
+      .logo-pink-header__glasses {
+        fill: $activ-color;
+      }
+    }
   }
 }
 
 @media (min-width: $desktop-width) {
+
   .page-header {
-    background-image: url("../img/line.png");
-    width: 100%;
+    position: absolute;
+  }
+  .page-header__logo {
+    padding: 0;
+    margin-right: 20px;
+    margin-top: 27px;
+    margin-bottom: 43px;
+    background: transparent;
   }
 
-  .page-header__logo {
-    padding: 27px 20px;
-    background-image: url("../img/logo-pink-blue-mobile.svg");
-    background-repeat: no-repeat;
+  .logo-pink-header__stars,
+  .logo-pink-header__star,
+  .logo-pink-header__glasses-crop {
+    display: block;
+    fill: #ffffff;
+  }
+
+  .logo-pink-header__stars,
+  .logo-pink-header__star {
+    fill: $pink;
+  }
+
+  .logo-pink-header__glasses {
+    display: none;
+  }
+
+  .logo-pink-header__svg {
+    &:hover {
+      .logo-pink-header__sign,
+      .logo-pink-header__glasses-crop {
+        fill: $pink;
+      }
+    }
+
+    &:active {
+      .logo-pink-header__sign,
+      .logo-pink-header__glasses-crop {
+        fill: $activ-color;
+      }
+    }
   }
 }
+
